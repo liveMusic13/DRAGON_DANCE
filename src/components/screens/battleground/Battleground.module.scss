@@ -1,0 +1,14 @@
+@import '../../../assets/styles/variables';
+
+.wrapperBattleground {
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+	text-shadow: none;
+
+	> .interface {
+		height: 100vh;
+		width: 30%;
+		background-color: rgba($color: $color_text_three, $alpha: 0.8);
+	}
+}
