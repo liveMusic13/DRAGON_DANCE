@@ -1,0 +1,74 @@
+@import '../../../assets/styles/variables';
+
+.blackout_off {
+	background-color: black;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.blackout_on {
+	opacity: 0.5;
+	background-color: black;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+.block_content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-shadow: $shadow_text;
+
+	> h1 {
+		font-size: 4em;
+		font-weight: 700;
+	}
+
+	> h3 {
+		font-size: 2.5em;
+		margin-bottom: 2em;
+		font-weight: 500;
+	}
+
+	> ul {
+		> li {
+			font-size: $fz_menu;
+			margin-bottom: 1em;
+			cursor: pointer;
+			font-weight: 500;
+
+			&:hover {
+				font-size: 1.65em;
+				color: $color_text_li_hover;
+				text-shadow: $shadow_text_li_hover;
+			}
+
+			&:first-child {
+				animation: li 4s infinite;
+
+				&:hover {
+					font-size: 1.65em;
+					color: $color_text_li_hover;
+					text-shadow: $shadow_text_li_hover;
+					animation: 0s infinite;
+				}
+			}
+		}
+	}
+}
+
+@keyframes li {
+	from {
+		color: $color_text_one;
+		text-shadow: $shadow_text;
+	}
+	to {
+		color: $color_text_two;
+		text-shadow: $shadow_text_animation;
+	}
+}

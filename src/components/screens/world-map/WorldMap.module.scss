@@ -1,0 +1,77 @@
+@import '../../../assets/styles/variables';
+
+.wrapper {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+
+	> .left-interface {
+		background-color: rgb(52, 56, 75);
+		width: 427px;
+		padding: 15px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+
+		> .left-interface__block-resources {
+			display: flex;
+
+			> .left-interface__block-gold {
+				display: flex;
+				gap: 10px;
+				align-items: center;
+
+				> .gold {
+					width: 50px;
+				}
+
+				> .numGold {
+					font-size: 25px;
+				}
+			}
+		}
+
+		> .left-interface__icon-player {
+			width: 150px;
+
+			> img {
+				width: 100%;
+			}
+
+			> p {
+				text-align: center;
+			}
+		}
+
+		> .left-interface_menu-player {
+			> .player-menu__collection {
+				margin-bottom: 10px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+				&:hover {
+					cursor: pointer;
+				}
+			}
+		}
+
+		> .endOfStroke {
+			width: 200px;
+			height: 50px;
+			border-radius: 15px;
+			background-color: $end_of_stroke;
+			font-size: 20px;
+			cursor: pointer;
+		}
+	}
+
+	> .right-interface {
+		width: 427px;
+		background-color: rgb(52, 56, 75);
+		padding: 15px;
+	}
+}

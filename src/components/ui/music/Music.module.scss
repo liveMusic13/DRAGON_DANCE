@@ -1,0 +1,21 @@
+@import '../../../assets/styles/variables';
+
+.wrapperMusic {
+	position: absolute;
+	top: 5%;
+	right: 5%;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: $color_text_three;
+	cursor: pointer;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	> .musicNote {
+		font-size: 35px;
+		text-shadow: none;
+	}
+}

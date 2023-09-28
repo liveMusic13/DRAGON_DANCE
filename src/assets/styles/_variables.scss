@@ -1,0 +1,31 @@
+// TODO: COLORS:БУРЫЙ rgb(69, 22, 28); ЗЕЛЕНЫЙ
+
+$color_text_one: black;
+$color_text_two: rgb(195, 195, 195);
+$color_text_three: rgb(220, 191, 76);
+
+$color_text_li_hover: rgb(255, 187, 0);
+
+$shadow_text: 0px 0px 10px rgb(185, 71, 0);
+$shadow_text_animation: 0px 0px 10px rgb(237, 36, 0);
+$shadow_text_li_hover: 0px 0px 10px rgb(255, 255, 255);
+
+$border_color_card: black;
+$end_of_stroke: rgb(192, 0, 0);
+
+$rarity_card_regular: rgba(rgb(240, 240, 240), 1);
+$rarity_shadow_regular: 0px 0px 15px rgba(rgb(255, 255, 255), $alpha: 1);
+
+$rarity_card_rare: rgba(rgb(7, 0, 215), 1);
+$rarity_shadow_rare: 0px 0px 15px rgba(rgb(8, 0, 255), $alpha: 1);
+
+$rarity_card_epic: rgba(rgb(107, 0, 215), $alpha: 1);
+$rarity_shadow_epic: 0px 0px 15px rgba(rgb(128, 0, 255), $alpha: 1);
+
+$rarity_card_legend: rgba(rgb(215, 147, 0), $alpha: 1);
+$rarity_shadow_legend: 0px 0px 15px rgba(rgb(255, 174, 0), $alpha: 1);
+
+$fz_standart: 20px;
+$fz_menu: 26px;
+
+$width_window_standart: 1500px;
