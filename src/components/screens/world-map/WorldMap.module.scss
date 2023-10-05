@@ -7,7 +7,7 @@
 	height: 100%;
 
 	> .left-interface {
-		background-color: rgb(52, 56, 75);
+		background-color: $color_background_one;
 		width: 427px;
 		padding: 15px;
 		display: flex;
@@ -71,7 +71,26 @@
 
 	> .right-interface {
 		width: 427px;
-		background-color: rgb(52, 56, 75);
+		background-color: $color_background_one;
 		padding: 15px;
+
+		> .right-interface__button-menu {
+			background-color: rgba($color: $color_background_one, $alpha: 0);
+			font-size: 25px;
+		}
+
+		> .right-interface__menu {
+			margin-top: 10px;
+			background-color: $color_text_two;
+			border-radius: 15px;
+			padding: 10px;
+			max-width: 280px;
+
+			> li {
+				> .right-interface__link {
+					color: $color_text_one;
+				}
+			}
+		}
 	}
 }
