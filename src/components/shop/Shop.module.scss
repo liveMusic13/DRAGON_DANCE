@@ -1,0 +1,64 @@
+@import '../../assets/styles/variables';
+
+.wrapper {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	> .block__booster {
+		> .booster_standart {
+			width: 400px;
+			height: 550px;
+			background-color: $color_text_two;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border: 5px solid $color_text_one;
+			border-radius: 30px;
+			display: flex;
+			flex-direction: column;
+			gap: 50px;
+
+			> .nameBooster {
+				font-size: 40px;
+				font-weight: 900;
+				text-align: center;
+			}
+
+			> .image {
+				font-size: 150px;
+			}
+
+			> .price {
+				justify-self: flex-end;
+				color: $color_text_li_hover;
+				font-size: 30px;
+				background-color: $color_text_one;
+				padding: 10px;
+				border-radius: 50%;
+			}
+		}
+	}
+
+	> .back_to_map {
+		position: absolute;
+		bottom: 5%;
+		right: 5%;
+		width: 200px;
+		height: 50px;
+		border-radius: 15px;
+		background-color: $color_text_three;
+		color: $color_text_one;
+		font-size: 20px;
+
+		&:hover {
+			border: 4px solid $color_text_two;
+			cursor: pointer;
+		}
+	}
+}
