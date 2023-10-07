@@ -4,6 +4,7 @@ export interface ICard {
 	rarity: string;
 	name: string;
 	house: string;
+	image: string;
 	characteristics: {
 		rangedAttack?: number;
 		attack?: number;

@@ -1,4 +1,5 @@
 import React, { Dispatch, FC, SetStateAction } from 'react';
+import Button from '../ui/button/Button';
 import styles from './Shop.module.scss';
 
 interface IViewShop {
@@ -15,10 +16,7 @@ const Shop: FC<IViewShop> = ({ setViewShop }) => {
 					<p className={styles.price}>50</p>
 				</div>
 			</div>
-
-			<button className={styles.back_to_map} onClick={() => setViewShop(false)}>
-				Назад
-			</button>
+			<Button setViewShop={setViewShop}>Назад</Button>
 		</div>
 	);
 };

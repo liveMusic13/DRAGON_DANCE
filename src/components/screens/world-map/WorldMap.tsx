@@ -2,6 +2,7 @@ import cn from 'clsx';
 import React, { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '../../layout/Layout';
+import MyCollection from '../../my-collection/MyCollection';
 import Shop from '../../shop/Shop';
 import Music from '../../ui/music/Music';
 import styles from './WorldMap.module.scss';
@@ -9,19 +10,24 @@ import styles from './WorldMap.module.scss';
 const WorldMap: FC = () => {
 	const [viewMenu, setViewMenu] = useState<boolean>(false);
 	const [viewShop, setViewShop] = useState<boolean>(false);
+	const [viewCollection, setVieCollection] = useState<boolean>(false);
 
 	return (
 		<Layout
 			bgImage={
 				viewShop
 					? 'url("./images/screens/shop_booster.jpg")'
+					: viewCollection
+					? 'url("./images/screens/iron_throne.jpg")'
 					: 'url("./images/screens/vladeniya.webp")'
 			}
-			bgSize='contain'
+			bgSize={viewCollection ? 'cover' : 'contain'}
 		>
 			<Music />
 			{viewShop ? (
 				<Shop setViewShop={setViewShop} />
+			) : viewCollection ? (
+				<MyCollection setVieCollection={setVieCollection} />
 			) : (
 				<div className={styles.wrapper}>
 					<div className={styles['left-interface']}>
@@ -45,7 +51,10 @@ const WorldMap: FC = () => {
 								styles['player-menu'],
 							)}
 						>
-							<li className={styles['player-menu__collection']}>
+							<li
+								onClick={() => setVieCollection(true)}
+								className={styles['player-menu__collection']}
+							>
 								Моя коллекция
 							</li>
 							<li

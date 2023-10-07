@@ -32,8 +32,8 @@ const house: IHouse[] = [
 	},
 	{
 		id: 6,
-		name: 'Талли',
-		image: './images/choise-house/House_Tully.png',
+		name: 'Веларион',
+		image: './images/choise-house/House_Velarion.png',
 	},
 	{
 		id: 7,

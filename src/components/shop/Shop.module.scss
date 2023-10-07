@@ -24,6 +24,11 @@
 			flex-direction: column;
 			gap: 50px;
 
+			&:hover {
+				cursor: pointer;
+				border-color: $color_text_li_hover;
+			}
+
 			> .nameBooster {
 				font-size: 40px;
 				font-weight: 900;
