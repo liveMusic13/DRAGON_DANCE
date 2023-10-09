@@ -1,0 +1,60 @@
+@import '../../../assets/styles/variables';
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	width: 100%;
+	padding: 30px;
+
+	> .block__openBooster {
+		align-self: center;
+
+		> .booster_standart {
+			width: 350px;
+			height: 500px;
+			background-color: $color_text_two;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border: 5px solid $color_text_one;
+			border-radius: 30px;
+			display: flex;
+			flex-direction: column;
+			gap: 50px;
+
+			&:hover {
+				cursor: pointer;
+				border-color: $color_text_li_hover;
+			}
+
+			> .nameBooster {
+				font-size: 40px;
+				font-weight: 900;
+				text-align: center;
+			}
+
+			> .image {
+				font-size: 150px;
+			}
+		}
+	}
+
+	> .block__activeBooster {
+		display: flex;
+		justify-content: space-between;
+		border: 3px solid $color_text_li_hover;
+		border-radius: 10px;
+		width: 400px;
+		padding: 5px 10px;
+
+		> .activeBooster__paragraph {
+		}
+		> .activeBooster__number {
+			border-left: 2px solid $color_text_two;
+			padding-left: 10px;
+			font-weight: 900;
+		}
+	}
+}

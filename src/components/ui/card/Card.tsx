@@ -24,7 +24,7 @@ const Card: FC<ICard> = ({ house, name, description, characteristics }) => {
 			<h2>{name}</h2>
 			<img
 				className={cn(styles.image)}
-				src='./images/image_card/vanguard.jpg'
+				src='./images/image_card/neutral/regular/standart-card/vanguard.jpg'
 				alt='vanguard'
 			/>
 			<div className={cn(styles.rarity)}></div>

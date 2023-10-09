@@ -8,6 +8,7 @@ const initialState: IStateUsers[] = [
 		gold: 1000,
 		house: 'Stark',
 		imageHouse: './images/choise-house/House_Stark.svg',
+		haveBooster: 1,
 		collectionCard: {
 			fullCollection: [],
 			cardDeck: [
@@ -24,6 +25,7 @@ const initialState: IStateUsers[] = [
 		gold: 1000,
 		house: 'Lannister',
 		imageHouse: './images/choise-house/House_Lannister.svg',
+		haveBooster: 1,
 		collectionCard: {
 			fullCollection: [],
 			cardDeck: [
@@ -40,6 +42,7 @@ const initialState: IStateUsers[] = [
 		gold: 1000,
 		house: 'Targaryen',
 		imageHouse: './images/choise-house/House_Targaryen.svg',
+		haveBooster: 1,
 		collectionCard: {
 			fullCollection: [],
 			cardDeck: [
@@ -56,6 +59,7 @@ const initialState: IStateUsers[] = [
 		gold: 1000,
 		house: 'Grayjoy',
 		imageHouse: './images/choise-house/House_Grayjoy.png',
+		haveBooster: 1,
 		collectionCard: {
 			fullCollection: [],
 			cardDeck: [
@@ -72,6 +76,7 @@ const initialState: IStateUsers[] = [
 		gold: 1000,
 		house: 'Arryn',
 		imageHouse: './images/choise-house/House_ArrynSigil.png',
+		haveBooster: 1,
 		collectionCard: {
 			fullCollection: [],
 			cardDeck: [
@@ -88,6 +93,7 @@ const initialState: IStateUsers[] = [
 		gold: 1000,
 		house: 'Baratheon',
 		imageHouse: './images/choise-house/House_Baratheon.svg',
+		haveBooster: 1,
 		collectionCard: {
 			fullCollection: [],
 			cardDeck: [
@@ -104,6 +110,7 @@ const initialState: IStateUsers[] = [
 		gold: 1000,
 		house: 'Velarion',
 		imageHouse: './images/choise-house/House_Velarion.png',
+		haveBooster: 1,
 		collectionCard: {
 			fullCollection: [],
 			cardDeck: [
@@ -120,6 +127,7 @@ const initialState: IStateUsers[] = [
 		gold: 1000,
 		house: 'Martel',
 		imageHouse: './images/choise-house/House_Martel.png',
+		haveBooster: 1,
 		collectionCard: {
 			fullCollection: [],
 			cardDeck: [
@@ -136,6 +144,7 @@ const initialState: IStateUsers[] = [
 		gold: 1000,
 		house: 'Hightower',
 		imageHouse: './images/choise-house/House_Hightower.svg',
+		haveBooster: 1,
 		collectionCard: {
 			fullCollection: [],
 			cardDeck: [
@@ -159,10 +168,9 @@ export const Users = createSlice({
 				});
 			}
 		},
-		// addPlayerHouse: (state, { payload }) => {
-		// 	//здесь буду получать объект в котором будет цифра(номер игрока) и его дом
-		// 	state[payload.num].house = payload.house;
-		// },
+		byBooster: (state, { payload }) => {
+			state[payload.numPlayer].haveBooster -= payload.deleteOneBooster;
+		},
 	},
 });
 

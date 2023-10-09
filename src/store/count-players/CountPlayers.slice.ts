@@ -5,7 +5,7 @@ const initialState = {
 };
 
 export const CountPlayers = createSlice({
-	name: 'CountPlayers',
+	name: 'countPlayers',
 	initialState,
 	reducers: {
 		addCountPlayers: (state, { payload }) => {
