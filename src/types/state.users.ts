@@ -13,6 +13,7 @@ export interface IStateUsers {
 	gold: number;
 	house: string;
 	imageHouse: string;
+	haveBooster: number;
 	collectionCard: {
 		fullCollection: ICard[];
 		cardDeck: ICardDeck[];

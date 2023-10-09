@@ -8,12 +8,14 @@ import MyCollection from '../../my-collection/MyCollection';
 import Shop from '../../shop/Shop';
 import IconOnTheMap from '../../ui/icon-on-the-map/IconOnTheMap';
 import Music from '../../ui/music/Music';
+import OpenBooster from '../../ui/open-booster/OpenBooster';
 import styles from './WorldMap.module.scss';
 
 const WorldMap: FC = () => {
 	const [viewMenu, setViewMenu] = useState<boolean>(false);
 	const [viewShop, setViewShop] = useState<boolean>(false);
 	const [viewCollection, setVieCollection] = useState<boolean>(false);
+	const [viewOpenBooster, setOpenBooster] = useState<boolean>(false);
 
 	const { users } = useSelector(state => state);
 
@@ -37,15 +39,21 @@ const WorldMap: FC = () => {
 					? 'url("./images/screens/shop_booster.jpg")'
 					: viewCollection
 					? 'url("./images/screens/iron_throne.jpg")'
+					: viewOpenBooster
+					? 'url("./images/screens/Open_booster.jpeg")'
 					: 'url("./images/screens/vladeniya.webp")'
 			}
-			bgSize={viewCollection || viewShop ? 'cover' : 'contain'}
+			bgSize={
+				viewCollection || viewShop || viewOpenBooster ? 'cover' : 'contain'
+			}
 		>
 			<Music />
 			{viewShop ? (
 				<Shop setViewShop={setViewShop} />
 			) : viewCollection ? (
 				<MyCollection setVieCollection={setVieCollection} />
+			) : viewOpenBooster ? (
+				<OpenBooster setOpenBooster={setOpenBooster} />
 			) : (
 				<div className={styles.wrapper}>
 					<div className={styles['left-interface']}>
@@ -75,7 +83,10 @@ const WorldMap: FC = () => {
 							>
 								Моя коллекция
 							</li>
-							<li className={styles['player-menu__collection']}>
+							<li
+								onClick={() => setOpenBooster(true)}
+								className={styles['player-menu__collection']}
+							>
 								Открыть бустеры
 							</li>
 							<li
