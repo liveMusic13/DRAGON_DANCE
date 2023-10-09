@@ -7,7 +7,7 @@
 	background-color: black;
 	color: white;
 	position: absolute;
-	top: 10%;
+	top: 5%;
 	left: 10%;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -19,13 +19,18 @@
 
 	> .house {
 		width: 150px;
-		height: 150px;
 
 		> h2 {
 			text-align: center;
 			margin-bottom: 10px;
 			font-size: 25px;
 			font-weight: 500;
+		}
+
+		> p {
+			font-size: 18px;
+			text-align: center;
+			margin-bottom: 10px;
 		}
 
 		> img {

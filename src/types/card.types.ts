@@ -29,7 +29,7 @@ export interface IRarity {
 export interface IRarityHouse {
 	regular: {
 		stark: ICard[];
-		tully: ICard[];
+		velaryon: ICard[];
 		targarien: ICard[];
 		lannister: ICard[];
 		baratheon: ICard[];
@@ -40,7 +40,7 @@ export interface IRarityHouse {
 	};
 	rare: {
 		stark: ICard[];
-		tully: ICard[];
+		velaryon: ICard[];
 		targarien: ICard[];
 		lannister: ICard[];
 		baratheon: ICard[];
@@ -51,7 +51,7 @@ export interface IRarityHouse {
 	};
 	epic: {
 		stark: ICard[];
-		tully: ICard[];
+		velaryon: ICard[];
 		targarien: ICard[];
 		lannister: ICard[];
 		baratheon: ICard[];
@@ -62,7 +62,7 @@ export interface IRarityHouse {
 	};
 	legendary: {
 		stark: ICard[];
-		tully: ICard[];
+		velaryon: ICard[];
 		targarien: ICard[];
 		lannister: ICard[];
 		baratheon: ICard[];
