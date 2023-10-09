@@ -1,0 +1,280 @@
+@import '../../../assets/styles/variables';
+
+.wrapper__Stark {
+	position: absolute;
+	top: 18%;
+	left: 45%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	> img {
+		width: 40px;
+		height: 40px;
+
+		&:hover {
+			width: 50px;
+			height: 50px;
+			cursor: pointer;
+
+			&:hover + p {
+				display: block;
+			}
+		}
+	}
+
+	> p {
+		display: none;
+		font-size: 15px;
+		font-weight: 700;
+		text-shadow: $shadow_text_animation;
+	}
+}
+
+.wrapper__Lannister {
+	position: absolute;
+	top: 56%;
+	left: 39%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	> img {
+		width: 40px;
+		height: 40px;
+
+		&:hover {
+			width: 50px;
+			height: 50px;
+			cursor: pointer;
+
+			&:hover + p {
+				display: block;
+			}
+		}
+	}
+
+	> p {
+		display: none;
+		font-size: 15px;
+		font-weight: 700;
+		text-shadow: $shadow_text_animation;
+	}
+}
+
+.wrapper__Targaryen {
+	position: absolute;
+	top: 59%;
+	left: 54.5%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	> img {
+		width: 40px;
+		height: 40px;
+
+		&:hover {
+			width: 50px;
+			height: 50px;
+			cursor: pointer;
+
+			&:hover + p {
+				display: block;
+			}
+		}
+	}
+
+	> p {
+		display: none;
+		font-size: 15px;
+		font-weight: 700;
+		text-shadow: $shadow_text_animation;
+	}
+}
+
+.wrapper__Grayjoy {
+	position: absolute;
+	top: 48%;
+	left: 37%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	> img {
+		width: 40px;
+		height: 40px;
+
+		&:hover {
+			width: 50px;
+			height: 50px;
+			cursor: pointer;
+
+			&:hover + p {
+				display: block;
+			}
+		}
+	}
+
+	> p {
+		display: none;
+		font-size: 15px;
+		font-weight: 700;
+		text-shadow: $shadow_text_animation;
+	}
+}
+
+.wrapper__Arryn {
+	position: absolute;
+	top: 46.5%;
+	left: 50.7%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	> img {
+		width: 40px;
+		height: 40px;
+
+		&:hover {
+			width: 50px;
+			height: 50px;
+			cursor: pointer;
+
+			&:hover + p {
+				display: block;
+			}
+		}
+	}
+
+	> p {
+		display: none;
+		font-size: 15px;
+		font-weight: 700;
+		text-shadow: $shadow_text_animation;
+	}
+}
+
+.wrapper__Baratheon {
+	position: absolute;
+	top: 70%;
+	left: 51.7%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	> img {
+		width: 40px;
+		height: 40px;
+
+		&:hover {
+			width: 50px;
+			height: 50px;
+			cursor: pointer;
+
+			&:hover + p {
+				display: block;
+			}
+		}
+	}
+
+	> p {
+		display: none;
+		font-size: 15px;
+		font-weight: 700;
+		text-shadow: $shadow_text_animation;
+	}
+}
+
+.wrapper__Velarion {
+	position: absolute;
+	top: 59%;
+	left: 51.6%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	> img {
+		width: 40px;
+		height: 40px;
+
+		&:hover {
+			width: 50px;
+			height: 50px;
+			cursor: pointer;
+
+			&:hover + p {
+				display: block;
+			}
+		}
+	}
+
+	> p {
+		display: none;
+		font-size: 15px;
+		font-weight: 700;
+		text-shadow: $shadow_text_animation;
+	}
+}
+
+.wrapper__Martel {
+	position: absolute;
+	top: 88%;
+	left: 54%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	> img {
+		width: 40px;
+		height: 40px;
+
+		&:hover {
+			width: 50px;
+			height: 50px;
+			cursor: pointer;
+
+			&:hover + p {
+				display: block;
+			}
+		}
+	}
+
+	> p {
+		display: none;
+		font-size: 15px;
+		font-weight: 700;
+		text-shadow: $shadow_text_animation;
+	}
+}
+
+.wrapper__Hightower {
+	position: absolute;
+	top: 83%;
+	left: 37%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	> img {
+		width: 40px;
+		height: 40px;
+
+		&:hover {
+			width: 50px;
+			height: 50px;
+			cursor: pointer;
+
+			&:hover + p {
+				display: block;
+			}
+		}
+	}
+
+	> p {
+		display: none;
+		font-size: 15px;
+		font-weight: 700;
+		text-shadow: $shadow_text_animation;
+	}
+}

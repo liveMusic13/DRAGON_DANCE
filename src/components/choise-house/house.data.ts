@@ -17,33 +17,33 @@ const house: IHouse[] = [
 	},
 	{
 		id: 3,
+		name: 'Таргариен',
+		image: './images/choise-house/House_Targaryen.svg',
+	},
+	{
+		id: 4,
 		name: 'Грейджой',
 		image: './images/choise-house/House_Grayjoy.png',
 	},
 	{
-		id: 4,
+		id: 5,
 		name: 'Аррен',
 		image: './images/choise-house/House_ArrynSigil.png',
 	},
 	{
-		id: 5,
+		id: 6,
 		name: 'Баратеон',
 		image: './images/choise-house/House_Baratheon.svg',
 	},
 	{
-		id: 6,
-		name: 'Талли',
-		image: './images/choise-house/House_Tully.png',
-	},
-	{
 		id: 7,
-		name: 'Мартел',
-		image: './images/choise-house/House_Martel.png',
+		name: 'Веларион',
+		image: './images/choise-house/House_Velarion.png',
 	},
 	{
 		id: 8,
-		name: 'Таргариен',
-		image: './images/choise-house/House_Targaryen.svg',
+		name: 'Мартел',
+		image: './images/choise-house/House_Martel.png',
 	},
 	{
 		id: 9,
