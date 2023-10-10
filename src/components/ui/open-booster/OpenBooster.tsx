@@ -16,15 +16,15 @@ const OpenBooster: FC<IViewOpenBooster> = ({ setOpenBooster }) => {
 	const dispatch = useDispatch();
 
 	const [viewCardInBooster, setViewCardInBooster] = useState<boolean>(false);
-	console.log(users[countPlayers.count].house);
+
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.block__openBooster}>
 				{viewCardInBooster ? (
 					<Card
-						house='none' //TODO: РАЗОБРАТЬСЯ С ПЕРЕДАЧЕЙ ДАННЫХ В КАРТУ
+						house={users[countPlayers.count].house} //TODO: РАЗОБРАТЬСЯ С ПЕРЕДАЧЕЙ ДАННЫХ В КАРТУ
 						name='sdf'
-						description='sdffgsfjalfhaflhuewhfsfdfgdddddddddddddddddddddddddddddddddddddddddddd'
+						description='sdffgsfjalfhaf lhuewhfsf dfgdddddddddddddddddddd ddddd ddddddddddddddddddd'
 						characteristics={{ attack: 3 }}
 					/>
 				) : (
