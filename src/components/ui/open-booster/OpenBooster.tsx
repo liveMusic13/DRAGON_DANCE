@@ -47,10 +47,10 @@ const OpenBooster: FC<IViewOpenBooster> = ({ setOpenBooster }) => {
 			<div className={styles.block__openBooster}>
 				{viewCardInBooster ? (
 					<Card
-						house={users[countPlayers.count].house} //TODO: РАЗОБРАТЬСЯ С ПЕРЕДАЧЕЙ ДАННЫХ В КАРТУ
+						house={users[countPlayers.count].house}
 						name={getRandomHouseCard().name}
 						description={getRandomHouseCard().description}
-						characteristics={getCharacteristics(getRandomHouseCard())}
+						characteristics={getCharacteristics(getRandomHouseCard())} //TODO: ДОБАВИЛ ДАННЫЕ В КАРТУ. НО ПРОБЛЕМА В ТОМ ЧТО ДАННЫЕ ПОЧЕМУ-ТО ДОБАВЛЯЮТЬСЯ ИЗ РАЗНЫХ КАРТ. Т.Е. ОПИСАНИЕ С ОДНОЙ КАРТЫ, ИМЯ С ДРУГОЙ И ТД.
 					/>
 				) : (
 					<div
