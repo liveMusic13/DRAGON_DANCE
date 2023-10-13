@@ -11,7 +11,7 @@ export const cardHome: IRarityHouse = {
 				type: 'human',
 				rarity: 'regular',
 				name: 'Ходор',
-				image: './images/image_card/regular/human/Hodor.jpg',
+				image: './images/image_card/stark/regular/human/Hodor.jpg',
 				characteristics: {
 					attack: 10,
 					defence: 2,
@@ -76,8 +76,7 @@ export const cardHome: IRarityHouse = {
 				type: 'human',
 				rarity: 'rare',
 				name: 'Рикон Старк',
-				image:
-					'./images/image_card/stark/rare/legendary/human/Rickon_Stark.jpg',
+				image: './images/image_card/stark/rare/human/Rickon_Stark.jpg',
 				characteristics: {
 					attack: 4,
 					defence: 5,
@@ -143,7 +142,7 @@ export const cardHome: IRarityHouse = {
 				type: 'human',
 				rarity: 'epic',
 				name: 'Санса Старк',
-				image: './images/image_card/stark/epic/legendary/human/Sansa_Stark.jpg',
+				image: './images/image_card/stark/epic/human/Sansa_Stark.jpg',
 				characteristics: {
 					defence: 1,
 					health: 15,
@@ -159,7 +158,7 @@ export const cardHome: IRarityHouse = {
 		targarien: [
 			{
 				id: 32,
-				house: 'targarien',
+				house: 'targaryen',
 				type: 'human',
 				rarity: 'epic',
 				name: 'Эймонд Таргариен',
@@ -291,7 +290,7 @@ export const cardHome: IRarityHouse = {
 				rarity: 'legendary',
 				name: 'Роберт Баратеон',
 				image:
-					'./images/image_card/lanister/legendary/human/Tayvin_Lanister.jpg',
+					'./images/image_card/baratheon/legendary/human/Robert_Baratheon.jpg',
 				characteristics: {
 					attack: 20,
 					defence: 5,
@@ -330,8 +329,8 @@ export const cardHome: IRarityHouse = {
 				house: 'grayjoy',
 				type: 'human',
 				rarity: 'legendary',
-				name: 'Джон Аррен',
-				image: './images/image_card/arryn/legendary/human/Euron.jpg',
+				name: 'Эурон Грейджой',
+				image: './images/image_card/greygoy/legendary/human/Euron.jpg',
 				characteristics: {
 					attack: 14,
 					defence: 9,
@@ -638,7 +637,7 @@ export const cardNeutral: IRarity = {
 			id: 24,
 			house: 'none',
 			type: 'human',
-			rarity: 'legendary',
+			rarity: 'epic',
 			name: 'Рамси Сноу',
 			image: './images/image_card/neutral/epic/human/Bolton_Ramsay.jpg',
 			characteristics: {

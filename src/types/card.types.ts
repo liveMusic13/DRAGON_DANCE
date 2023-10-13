@@ -12,7 +12,6 @@ export interface ICard {
 		defence?: number;
 		health?: number;
 		move?: number;
-		chunning?: number;
 		influence?: number;
 		intrigue?: number;
 	};
