@@ -27,7 +27,7 @@ const useGetCardInBooster = () => {
 			? 'hightower'
 			: 'stark';
 
-	const getRandomHouseCard = () => {
+	const getRandomCard = () => {
 		if (Math.random() < 0.25) {
 			if (randomValueCategory < 0.5) {
 				return cardHome.regular[house][
@@ -68,7 +68,7 @@ const useGetCardInBooster = () => {
 	};
 
 	return {
-		getRandomHouseCard,
+		getRandomCard,
 	};
 };
 

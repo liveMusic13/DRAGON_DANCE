@@ -18,40 +18,46 @@ const OpenBooster: FC<IViewOpenBooster> = ({ setOpenBooster }) => {
 
 	const [viewCardInBooster, setViewCardInBooster] = useState<boolean>(false);
 
-	const { getRandomHouseCard } = useGetCardInBooster();
+	const { getRandomCard } = useGetCardInBooster();
 
-	const getCharacteristics = card => {
-		const characteristics = {};
+	const getNewCard = card => {
+		const newCard = {
+			id: card.id,
+			type: card.type,
+			rarity: card.rarity,
+			name: card.name,
+			house: card.house,
+			image: card.image,
+			characteristics: {},
+			description: card.description,
+		};
 
 		if (card.characteristics.attack)
-			characteristics.attack = card.characteristics.attack;
+			newCard.characteristics.attack = card.characteristics.attack;
 		if (card.characteristics.rangedAttack)
-			characteristics.rangedAttack = card.characteristics.rangedAttack;
+			newCard.characteristics.rangedAttack = card.characteristics.rangedAttack;
 		if (card.characteristics.attackAgainstCavalry)
-			characteristics.attackAgainstCavalry =
+			newCard.characteristics.attackAgainstCavalry =
 				card.characteristics.attackAgainstCavalry;
 		if (card.characteristics.defence)
-			characteristics.defence = card.characteristics.defence;
+			newCard.characteristics.defence = card.characteristics.defence;
 		if (card.characteristics.health)
-			characteristics.health = card.characteristics.health;
+			newCard.characteristics.health = card.characteristics.health;
 		if (card.characteristics.move)
-			characteristics.move = card.characteristics.move;
+			newCard.characteristics.move = card.characteristics.move;
 		if (card.characteristics.influence)
-			characteristics.influence = card.characteristics.influence;
+			newCard.characteristics.influence = card.characteristics.influence;
 		if (card.characteristics.intrigue)
-			characteristics.intrigue = card.characteristics.intrigue;
+			newCard.characteristics.intrigue = card.characteristics.intrigue;
+
+		return newCard;
 	};
 
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.block__openBooster}>
 				{viewCardInBooster ? (
-					<Card
-						house={users[countPlayers.count].house}
-						name={getRandomHouseCard().name}
-						description={getRandomHouseCard().description}
-						characteristics={getCharacteristics(getRandomHouseCard())} //TODO: ДОБАВИЛ ДАННЫЕ В КАРТУ. НО ПРОБЛЕМА В ТОМ ЧТО ДАННЫЕ ПОЧЕМУ-ТО ДОБАВЛЯЮТЬСЯ ИЗ РАЗНЫХ КАРТ. Т.Е. ОПИСАНИЕ С ОДНОЙ КАРТЫ, ИМЯ С ДРУГОЙ И ТД.
-					/>
+					<Card newCard={getNewCard(getRandomCard())} />
 				) : (
 					<div
 						className={styles.booster_standart}
