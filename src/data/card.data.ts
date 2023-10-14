@@ -21,12 +21,60 @@ export const cardHome: IRarityHouse = {
 				description:
 					'Ходор — слабоумный конюх на службе у Старков, позднее — личный слуга Брана Старка. Его настоящее имя Уолдер, прозвище «Ходор» — это единственное слово, которое он может выговорить.',
 			},
+			{
+				id: 36,
+				house: 'stark',
+				type: 'human',
+				rarity: 'regular',
+				name: 'Нэн',
+				image: './images/image_card/stark/regular/human/Nan.jpg',
+				characteristics: {
+					health: 13,
+					move: 1,
+				},
+				description:
+					'Нэн, более известная как Старая Нэн — старая служанка в Винтерфелле, нянька при нескольких поколениях Старков. Это самая старая жительница Винтерфелла, Ходор приходится ей правнуком.',
+			},
+			{
+				id: 37,
+				house: 'stark',
+				type: 'human',
+				rarity: 'regular',
+				name: 'Джори Кассель',
+				image: './images/image_card/stark/regular/human/Jory_Cassel.jpg',
+				characteristics: {
+					attack: 7,
+					defence: 6,
+					health: 5,
+					move: 1,
+				},
+				description:
+					'Джо́ри Кассе́ль — представитель дома Касселей, капитан домашней гвардии Старков.',
+			},
+			{
+				id: 38,
+				house: 'stark',
+				type: 'human',
+				rarity: 'regular',
+				name: 'Мейстер Лювин',
+				image: './images/image_card/stark/regular/human/Lewin.jpg',
+				characteristics: {
+					attack: 1,
+					defence: 1,
+					health: 10,
+					move: 1,
+					intrigue: 1,
+					influence: 3,
+				},
+				description:
+					'Ме́йстер Лю́вин — мейстер Винтерфелла. Он служит дому Старков уже много лет, принимал все роды Кейтилин Старк.',
+			},
 		],
 		velaryon: [],
 		targarien: [
 			{
 				id: 30,
-				house: 'targarien',
+				house: 'targaryen',
 				type: 'human',
 				rarity: 'regular',
 				name: 'Эйгон III Таргариен',
@@ -40,6 +88,40 @@ export const cardHome: IRarityHouse = {
 				},
 				description:
 					'Король Эйгон III Таргариен по прозвищу Драконья Погибель — седьмой король Семи Королевств из династии Таргариенов, старший сын Рейниры и Деймона Таргариенов.',
+			},
+			{
+				id: 41,
+				house: 'none',
+				type: 'human',
+				rarity: 'regular',
+				name: 'Визерис III Таргариен',
+				image: './images/image_card/targarien/regular/human/Viserys_III.jpg',
+				characteristics: {
+					attack: 2,
+					defence: 3,
+					health: 7,
+					move: 1,
+					influence: 14,
+				},
+				description:
+					'Принц Визе́рис Тарга́риен — младший сын короля Эйриса II Таргариена, брат Рейгара и Дейнерис Таргариен.Визерис являлся жестоким, слабым, боязливым, нетерпеливым, тщеславным, жадным и глупым человеком.',
+			},
+			{
+				id: 44,
+				house: 'targaryen',
+				type: 'human',
+				rarity: 'regular',
+				name: 'Эйгон IV Таргариен',
+				image: './images/image_card/targarien/regular/human/Aegon_IV.jpg',
+				characteristics: {
+					attack: 1,
+					defence: 1,
+					health: 3,
+					move: 1,
+					influence: 10,
+				},
+				description:
+					'Король Эйгон IV Таргариен по прозвищу Недостойный — одиннадцатый король Семи Королевств из династии Таргариенов. Эйгон IV, один из худших королей на Железном троне, был сладострастным и некомпетентным правителем, потакавшим своим прихотям, за что и получил свое прозвище.',
 			},
 		],
 		lannister: [
@@ -87,12 +169,43 @@ export const cardHome: IRarityHouse = {
 				description:
 					'Ри́кон Старк — младший сын Эддарда Старка и Кейтилин Старк. Веселый, обаятельный и жизнерадостный ребенок, но даже в малом возрасте проявляюший темпераментность и присущее Старкам чувство собственного достоинства.',
 			},
+			{
+				id: 39,
+				house: 'stark',
+				type: 'human',
+				rarity: 'rare',
+				name: 'Родрик Кассель',
+				image: './images/image_card/stark/regular/human/Rodrik_Cassel.jpg',
+				characteristics: {
+					attack: 6,
+					defence: 8,
+					health: 8,
+					move: 1,
+					influence: 1,
+				},
+				description:
+					'Сир Родрик Кассель — глава дома Касселей, рыцарь на службе у Старков, мастер над оружием в Винтерфелле, позже кастелян замка.',
+			},
+			{
+				id: 40,
+				house: 'none',
+				type: 'effect',
+				rarity: 'rare',
+				name: 'Винтерфелл',
+				image: './images/image_card/stark/rare/effect/winterfell.jpeg',
+				characteristics: {
+					defence: 4,
+					influence: 1,
+				},
+				description:
+					'Ви́нтерфе́лл — родовой замок Старков, откуда те правят Севером. Расположен в центре региона, на восточной окраине Волчьего леса, к западу от Белого Ножа и юго-западу от Длинного озера. По преданиям, Винтерфелл был построен Брандоном Строителем 8000 лет назад.',
+			},
 		],
 		velaryon: [],
 		targarien: [
 			{
 				id: 31,
-				house: 'targarien',
+				house: 'targaryen',
 				type: 'human',
 				rarity: 'rare',
 				name: 'Дейрон Таргариен',
@@ -106,6 +219,42 @@ export const cardHome: IRarityHouse = {
 				},
 				description:
 					'Король Эйгон III Таргариен по прозвищу Драконья Погибель — седьмой король Семи Королевств из династии Таргариенов, старший сын Рейниры и Деймона Таргариенов.',
+			},
+			{
+				id: 43,
+				house: 'targaryen',
+				type: 'human',
+				rarity: 'rare',
+				name: 'Визерис I Таргариен',
+				image: './images/image_card/targarien/rare/human/Viserys_I.jpg',
+				characteristics: {
+					attack: 5,
+					defence: 3,
+					health: 5,
+					move: 1,
+					influence: 19,
+					intrigue: 2,
+				},
+				description:
+					'Визерис I Таргариен — пятый король Семи Королевств из династии Таргариенов. Король Визерис был великодушен, открыт, любезен, дружелюбен и щедр, любим как лордами, так и простым людом. Он был мирным человеком, полным, веселым и приятным на вид.',
+			},
+			{
+				id: 45,
+				house: 'targaryen',
+				type: 'human',
+				rarity: 'rare',
+				name: 'Рейнис Таргариен',
+				image: './images/image_card/targarien/rare/human/Rhaenys_Targaryen.jpg',
+				characteristics: {
+					attack: 2,
+					defence: 4,
+					health: 10,
+					move: 1,
+					influence: 6,
+					intrigue: 3,
+				},
+				description:
+					'Принцесса Рейнис Таргариен по прозвищу Почти Королева. была умной, способной, энергичной, гордой, неистовой и бесстрашной женщиной. У нее был вспыльчивый нрав. Принцесса была опытной драконьей всадницей, её драконом была Мелеис.',
 			},
 		],
 		lannister: [
@@ -244,7 +393,7 @@ export const cardHome: IRarityHouse = {
 		targarien: [
 			{
 				id: 16,
-				house: 'targarien',
+				house: 'targaryen',
 				type: 'human',
 				rarity: 'legendary',
 				name: 'Дейнерис Таргариен',
@@ -259,6 +408,23 @@ export const cardHome: IRarityHouse = {
 				},
 				description:
 					'Принцесса Дейне́рис Тарга́риен по прозвищу Бурерожденная — последняя представительница дома Таргариенов, дочь короля Эйриса II Безумного и его сестры-жены Рейлы, младшая сестра принцев Рейгара и Визериса Таргариенов.',
+			},
+			{
+				id: 42,
+				house: 'targaryen',
+				type: 'human',
+				rarity: 'legendary',
+				name: 'Балерион (Дракон)',
+				image: './images/image_card/targarien/regular/human/Viserys_III.jpg',
+				characteristics: {
+					attack: 20,
+					defence: 20,
+					health: 20,
+					move: 6,
+					influence: 20,
+				},
+				description:
+					'Балериóн, известный также под прозвищем Чёрный Ужас был самым большим драконом, которым когда-либо владели Таргариены, и единственным драконом из старой Валирии, дожившим до Завоевания Вестероса, именно он сжёг замок Харренхолл.',
 			},
 		],
 		lannister: [
@@ -488,10 +654,10 @@ export const cardNeutral: IRarity = {
 			house: 'none',
 			type: 'effect',
 			rarity: 'regular',
-			name: 'Туман',
+			name: 'Туман (test)',
 			image: './images/image_card/neutral/regular/effect-card/tuman.webp',
 			characteristics: {
-				rangedAttack: 3,
+				rangedAttack: -3,
 			},
 			description:
 				'Погружает поле битвы в густой мрак, уменьшая эффективность лучников на поле боя',
