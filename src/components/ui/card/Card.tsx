@@ -1,30 +1,15 @@
 import cn from 'clsx';
 import React, { FC } from 'react';
+import {
+	ICardForOpenBooster,
+	ICharacteristicsForComponentCard,
+} from '../../../types/card.types';
 import styles from './Card.module.scss';
 
-// interface ICard {
-// 	// house: string;
-// 	// description: string;
-// 	// name: string;
-// 	// characteristics: {
-// 	// 	attack?: number;
-// 	// 	rangedAttack?: number;
-// 	// 	attackAgainstCavalry?: number;
-// 	// 	health?: number;
-// 	// 	move?: number;
-// 	// 	defence?: number;
-// 	// 	influence?: number;
-// 	// 	intrigue?: number;
-// 	// };
-// 	newCard: {
-
-// 	}
-// }
-
-// const Card: FC<ICard> = ({ newCard }) => {
-const Card: FC = ({ newCard }) => {
-	//TODO: ТИПИЗИРОВАТЬ ПРОПС
-	const strongCard = characteristics => {
+const Card: FC<ICardForOpenBooster> = ({ newCard }) => {
+	const strongCard = (
+		characteristics: ICharacteristicsForComponentCard,
+	): number => {
 		let resultStrong = 0;
 
 		for (let value in characteristics) {

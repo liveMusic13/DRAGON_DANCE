@@ -1,6 +1,7 @@
 import React, { Dispatch, FC, SetStateAction, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { actions } from '../../../store/users/Users.slice';
+import { ICard } from '../../../types/card.types';
 import useGetCardInBooster from '../../hooks/useGetCardInBooster';
 import Button from '../button/Button';
 import Card from '../card/Card';
@@ -20,7 +21,7 @@ const OpenBooster: FC<IViewOpenBooster> = ({ setOpenBooster }) => {
 
 	const { getRandomCard } = useGetCardInBooster();
 
-	const getNewCard = card => {
+	const getNewCard = (card: ICard) => {
 		const newCard = {
 			id: card.id,
 			type: card.type,
