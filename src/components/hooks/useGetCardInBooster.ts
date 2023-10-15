@@ -4,8 +4,6 @@ import { cardHome, cardNeutral } from '../../data/card.data';
 const useGetCardInBooster = () => {
 	const { countPlayers } = useSelector(state => state);
 
-	const randomValueCategory = Math.random();
-
 	const house =
 		countPlayers.count === 0
 			? 'stark'
@@ -28,40 +26,70 @@ const useGetCardInBooster = () => {
 			: 'stark';
 
 	const getRandomCard = () => {
-		if (Math.random() < 0.25) {
-			if (randomValueCategory < 0.5) {
-				return cardHome.regular[house][
-					Math.floor(Math.random() * cardHome.regular[house].length)
-				];
-			} else if (randomValueCategory < 0.75) {
-				return cardHome.rare[house][
-					Math.floor(Math.random() * cardHome.rare[house].length)
+		const rarityProbabilities = {
+			regular: 0.7,
+			rare: 0.2,
+			epic: 0.08,
+			legendary: 0.02,
+		};
+
+		const rarityRoll = Math.random();
+		let rarity;
+
+		if (rarityRoll < rarityProbabilities.regular) {
+			rarity = 'regular';
+		} else if (
+			rarityRoll <
+			rarityProbabilities.regular + rarityProbabilities.rare
+		) {
+			rarity = 'rare';
+		} else if (
+			rarityRoll <
+			rarityProbabilities.regular +
+				rarityProbabilities.rare +
+				rarityProbabilities.epic
+		) {
+			rarity = 'epic';
+		} else {
+			rarity = 'legendary';
+		}
+
+		const randomValueCategory = Math.random();
+
+		if (Math.random() < 0.2) {
+			if (randomValueCategory < 0.7) {
+				return cardHome[rarity][house][
+					Math.floor(Math.random() * cardHome[rarity][house].length)
 				];
 			} else if (randomValueCategory < 0.9) {
-				return cardHome.epic[house][
-					Math.floor(Math.random() * cardHome.epic[house].length)
+				return cardHome[rarity][house][
+					Math.floor(Math.random() * cardHome[rarity][house].length)
+				];
+			} else if (randomValueCategory < 0.98) {
+				return cardHome[rarity][house][
+					Math.floor(Math.random() * cardHome[rarity][house].length)
 				];
 			} else {
-				return cardHome.legendary[house][
-					Math.floor(Math.random() * cardHome.legendary[house].length)
+				return cardHome[rarity][house][
+					Math.floor(Math.random() * cardHome[rarity][house].length)
 				];
 			}
 		} else {
-			if (randomValueCategory < 0.5) {
-				return cardNeutral.regular[
-					Math.floor(Math.random() * cardNeutral.regular.length)
-				];
-			} else if (randomValueCategory < 0.75) {
-				return cardNeutral.rare[
-					Math.floor(Math.random() * cardNeutral.rare.length)
+			if (randomValueCategory < 0.7) {
+				return cardNeutral[rarity][
+					Math.floor(Math.random() * cardNeutral[rarity].length)
 				];
 			} else if (randomValueCategory < 0.9) {
-				return cardNeutral.epic[
-					Math.floor(Math.random() * cardNeutral.epic.length)
+				return cardNeutral[rarity][
+					Math.floor(Math.random() * cardNeutral[rarity].length)
+				];
+			} else if (randomValueCategory < 0.98) {
+				return cardNeutral[rarity][
+					Math.floor(Math.random() * cardNeutral[rarity].length)
 				];
 			} else {
-				return cardNeutral.legendary[
-					Math.floor(Math.random() * cardNeutral.legendary.length)
+				return cardNeutral[rarity][
+					Math.floor(Math.random() * cardNeutral[rarity].length)
 				];
 			}
 		}
