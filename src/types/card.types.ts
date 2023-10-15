@@ -1,3 +1,36 @@
+export interface ICharacteristicsForComponentCard {
+	attack?: number;
+	rangedAttack?: number;
+	attackAgainstCavalry?: number;
+	health?: number;
+	move?: number;
+	defence?: number;
+	influence?: number;
+	intrigue?: number;
+}
+
+export interface ICardForOpenBooster {
+	newCard: {
+		id: number;
+		type: string;
+		house: string;
+		description: string;
+		name: string;
+		image: string;
+		rarity: string;
+		characteristics: {
+			attack?: number;
+			rangedAttack?: number;
+			attackAgainstCavalry?: number;
+			health?: number;
+			move?: number;
+			defence?: number;
+			influence?: number;
+			intrigue?: number;
+		};
+	};
+}
+
 export interface ICard {
 	id: number;
 	type: string;
