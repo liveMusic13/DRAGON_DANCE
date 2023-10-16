@@ -208,7 +208,7 @@ export const cardHome: IRarityHouse = {
 				type: 'human',
 				rarity: 'rare',
 				name: 'Родрик Кассель',
-				image: './images/image_card/stark/regular/human/Rodrik_Cassel.jpg',
+				image: './images/image_card/stark/rare/human/Rodrik_Cassel.jpg',
 				characteristics: {
 					attack: 6,
 					defence: 8,
@@ -919,7 +919,7 @@ export const cardNeutral: IRarity = {
 			type: 'human',
 			rarity: 'regular',
 			name: 'Оша',
-			image: './images/image_card/neutral/rare/human/Osha.jpg',
+			image: './images/image_card/neutral/regular/human/Osha.jpg',
 			characteristics: {
 				attack: 4,
 				defence: 3,

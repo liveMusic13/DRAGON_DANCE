@@ -168,8 +168,17 @@ export const Users = createSlice({
 				});
 			}
 		},
-		byBooster: (state, { payload }) => {
+		openBooster: (state, { payload }) => {
 			state[payload.numPlayer].haveBooster -= payload.deleteOneBooster;
+		},
+		byBooster: (state, { payload }) => {
+			if (state[payload.numPlayer].gold >= 80) {
+				state[payload.numPlayer].haveBooster += payload.addOneBooster;
+				state[payload.numPlayer].gold -= payload.price;
+			}
+		},
+		addFullCollectionCard: (state, { payload }) => {
+			state[payload.numPlayer].collectionCard.fullCollection.push(payload.card);
 		},
 	},
 });

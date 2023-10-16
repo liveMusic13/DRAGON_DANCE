@@ -1,8 +1,8 @@
 import React, { Dispatch, FC, SetStateAction, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { actions } from '../../../store/users/Users.slice';
-import { ICard } from '../../../types/card.types';
 import useGetCardInBooster from '../../hooks/useGetCardInBooster';
+import useGetNewCard from '../../hooks/useGetNewCard';
 import Button from '../button/Button';
 import Card from '../card/Card';
 import styles from './OpenBooster.module.scss';
@@ -20,45 +20,61 @@ const OpenBooster: FC<IViewOpenBooster> = ({ setOpenBooster }) => {
 	const [viewCardInBooster, setViewCardInBooster] = useState<boolean>(false);
 
 	const { getRandomCard } = useGetCardInBooster();
+	const { getNewCard } = useGetNewCard();
 
-	const getNewCard = (card: ICard) => {
-		const newCard = {
-			id: card.id,
-			type: card.type,
-			rarity: card.rarity,
-			name: card.name,
-			house: card.house,
-			image: card.image,
-			characteristics: {},
-			description: card.description,
-		};
-
-		if (card.characteristics.attack)
-			newCard.characteristics.attack = card.characteristics.attack;
-		if (card.characteristics.rangedAttack)
-			newCard.characteristics.rangedAttack = card.characteristics.rangedAttack;
-		if (card.characteristics.attackAgainstCavalry)
-			newCard.characteristics.attackAgainstCavalry =
-				card.characteristics.attackAgainstCavalry;
-		if (card.characteristics.defence)
-			newCard.characteristics.defence = card.characteristics.defence;
-		if (card.characteristics.health)
-			newCard.characteristics.health = card.characteristics.health;
-		if (card.characteristics.move)
-			newCard.characteristics.move = card.characteristics.move;
-		if (card.characteristics.influence)
-			newCard.characteristics.influence = card.characteristics.influence;
-		if (card.characteristics.intrigue)
-			newCard.characteristics.intrigue = card.characteristics.intrigue;
-
-		return newCard;
-	};
+	let cardOne = getNewCard(getRandomCard());
+	let cardTwo = getNewCard(getRandomCard());
+	let cardThree = getNewCard(getRandomCard());
+	let cardFour = getNewCard(getRandomCard());
+	let cardFive = getNewCard(getRandomCard());
+	console.log(cardOne);
 
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.block__openBooster}>
 				{viewCardInBooster ? (
-					<Card newCard={getNewCard(getRandomCard())} />
+					<div
+						className={styles.block__getCard}
+						onClick={() => {
+							dispatch(
+								actions.addFullCollectionCard({
+									numPlayer: countPlayers.count,
+									card: cardOne,
+								}),
+							);
+							dispatch(
+								actions.addFullCollectionCard({
+									numPlayer: countPlayers.count,
+									card: cardTwo,
+								}),
+							);
+							dispatch(
+								actions.addFullCollectionCard({
+									numPlayer: countPlayers.count,
+									card: cardThree,
+								}),
+							);
+							dispatch(
+								actions.addFullCollectionCard({
+									numPlayer: countPlayers.count,
+									card: cardFour,
+								}),
+							);
+							dispatch(
+								actions.addFullCollectionCard({
+									numPlayer: countPlayers.count,
+									card: cardFive,
+								}),
+							);
+							setViewCardInBooster(false);
+						}}
+					>
+						<Card newCard={cardOne} />
+						<Card newCard={cardTwo} />
+						<Card newCard={cardThree} />
+						<Card newCard={cardFour} />
+						<Card newCard={cardFive} />
+					</div>
 				) : (
 					<div
 						className={styles.booster_standart}
@@ -66,7 +82,7 @@ const OpenBooster: FC<IViewOpenBooster> = ({ setOpenBooster }) => {
 							if (users[countPlayers.count].haveBooster !== 0) {
 								setViewCardInBooster(true);
 								dispatch(
-									actions.byBooster({
+									actions.openBooster({
 										numPlayer: countPlayers.count,
 										deleteOneBooster: 1,
 									}),
