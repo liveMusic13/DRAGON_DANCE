@@ -22,12 +22,22 @@ const OpenBooster: FC<IViewOpenBooster> = ({ setOpenBooster }) => {
 	const { getRandomCard } = useGetCardInBooster();
 	const { getNewCard } = useGetNewCard();
 
-	let cardOne = getNewCard(getRandomCard());
-	let cardTwo = getNewCard(getRandomCard());
-	let cardThree = getNewCard(getRandomCard());
-	let cardFour = getNewCard(getRandomCard());
-	let cardFive = getNewCard(getRandomCard());
-	console.log(cardOne);
+	const arrayNewCard = [];
+
+	const funckAddInArray = () => {
+		let newCard = {
+			cardOne: getNewCard(getRandomCard()),
+			cardTwo: getNewCard(getRandomCard()),
+			cardThree: getNewCard(getRandomCard()),
+			cardFour: getNewCard(getRandomCard()),
+			cardFive: getNewCard(getRandomCard()),
+		};
+
+		for (let card in newCard) {
+			arrayNewCard.push(newCard[card]);
+		}
+	};
+	funckAddInArray();
 
 	return (
 		<div className={styles.wrapper}>
@@ -36,44 +46,22 @@ const OpenBooster: FC<IViewOpenBooster> = ({ setOpenBooster }) => {
 					<div
 						className={styles.block__getCard}
 						onClick={() => {
-							dispatch(
-								actions.addFullCollectionCard({
-									numPlayer: countPlayers.count,
-									card: cardOne,
-								}),
-							);
-							dispatch(
-								actions.addFullCollectionCard({
-									numPlayer: countPlayers.count,
-									card: cardTwo,
-								}),
-							);
-							dispatch(
-								actions.addFullCollectionCard({
-									numPlayer: countPlayers.count,
-									card: cardThree,
-								}),
-							);
-							dispatch(
-								actions.addFullCollectionCard({
-									numPlayer: countPlayers.count,
-									card: cardFour,
-								}),
-							);
-							dispatch(
-								actions.addFullCollectionCard({
-									numPlayer: countPlayers.count,
-									card: cardFive,
-								}),
-							);
+							arrayNewCard.forEach(card => {
+								dispatch(
+									actions.addFullCollectionCard({
+										numPlayer: countPlayers.count,
+										card: card,
+									}),
+								);
+							});
 							setViewCardInBooster(false);
 						}}
 					>
-						<Card newCard={cardOne} />
-						<Card newCard={cardTwo} />
-						<Card newCard={cardThree} />
-						<Card newCard={cardFour} />
-						<Card newCard={cardFive} />
+						{arrayNewCard.map(card => {
+							return (
+								<Card key={Math.random() + Math.random()} newCard={card} />
+							);
+						})}
 					</div>
 				) : (
 					<div
