@@ -178,7 +178,7 @@ export const Users = createSlice({
 			}
 		},
 		addFullCollectionCard: (state, { payload }) => {
-			state[payload.numPlayer].collectionCard.fullCollection.push(payload);
+			state[payload.numPlayer].collectionCard.fullCollection.push(payload.card);
 		},
 	},
 });

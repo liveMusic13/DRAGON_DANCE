@@ -36,11 +36,36 @@ const OpenBooster: FC<IViewOpenBooster> = ({ setOpenBooster }) => {
 					<div
 						className={styles.block__getCard}
 						onClick={() => {
-							dispatch(actions.addFullCollectionCard(cardOne));
-							dispatch(actions.addFullCollectionCard(cardTwo));
-							dispatch(actions.addFullCollectionCard(cardThree));
-							dispatch(actions.addFullCollectionCard(cardFour));
-							dispatch(actions.addFullCollectionCard(cardFive));
+							dispatch(
+								actions.addFullCollectionCard({
+									numPlayer: countPlayers.count,
+									card: cardOne,
+								}),
+							);
+							dispatch(
+								actions.addFullCollectionCard({
+									numPlayer: countPlayers.count,
+									card: cardTwo,
+								}),
+							);
+							dispatch(
+								actions.addFullCollectionCard({
+									numPlayer: countPlayers.count,
+									card: cardThree,
+								}),
+							);
+							dispatch(
+								actions.addFullCollectionCard({
+									numPlayer: countPlayers.count,
+									card: cardFour,
+								}),
+							);
+							dispatch(
+								actions.addFullCollectionCard({
+									numPlayer: countPlayers.count,
+									card: cardFive,
+								}),
+							);
 							setViewCardInBooster(false);
 						}}
 					>
