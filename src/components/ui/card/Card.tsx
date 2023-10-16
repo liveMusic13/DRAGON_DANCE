@@ -6,7 +6,7 @@ import {
 } from '../../../types/card.types';
 import styles from './Card.module.scss';
 
-const Card: FC<ICardForOpenBooster> = ({ newCard }) => {
+const Card: FC<ICardForOpenBooster> = ({ newCard, collection }) => {
 	const strongCard = (
 		characteristics: ICharacteristicsForComponentCard,
 	): number => {
@@ -20,7 +20,12 @@ const Card: FC<ICardForOpenBooster> = ({ newCard }) => {
 	};
 
 	return (
-		<div className={cn(styles[`wrapper-${newCard.house}`])}>
+		<div
+			className={cn({
+				[styles[`wrapper-${newCard.house}`]]: !collection,
+				[styles[`wrapper-${newCard.house}-collection`]]: collection,
+			})}
+		>
 			<h2>{newCard.name}</h2>
 			<img
 				className={cn(styles.image)}

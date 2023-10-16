@@ -10,6 +10,7 @@ export interface ICharacteristicsForComponentCard {
 }
 
 export interface ICardForOpenBooster {
+	collection?: boolean;
 	newCard: {
 		id: number;
 		type: string;
