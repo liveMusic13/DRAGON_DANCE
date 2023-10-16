@@ -8,7 +8,7 @@ const Music: FC = () => {
 		useMusicPlayer();
 	const [checkPlayOrPauseMusic, setCheckPlayOrPauseMusic] =
 		useState<boolean>(true);
-	const [viewNameMusic, setViewNameMusic] = useState<boolean>(true);
+	const [viewNameMusic, setViewNameMusic] = useState<boolean>(false);
 
 	return (
 		<div className={styles.wrapperMusic}>
