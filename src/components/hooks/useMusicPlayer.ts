@@ -44,6 +44,7 @@ const useMusicPlayer = () => {
 		audioPlayerRef,
 		playNextSong,
 		pauseSong,
+		currentSongIndex,
 	};
 };
 
