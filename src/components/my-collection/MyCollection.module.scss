@@ -8,6 +8,7 @@
 	width: 100%;
 	padding: 20px;
 	color: $color_text_two;
+	position: relative;
 
 	> .block__deckCard {
 		border: 3px solid $color_text_three;
@@ -30,6 +31,34 @@
 
 		> .block__card_title {
 			font-size: 40px;
+		}
+
+		> .block__card__fullCollection {
+			display: flex;
+			gap: 20px;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+		}
+	}
+
+	> .block__switchCard {
+		position: absolute;
+		top: 90%;
+		left: 45%;
+		display: flex;
+		gap: 20px;
+
+		> button {
+			background-color: $color_text_three;
+			border-radius: 10px;
+			width: 50px;
+			height: 25px;
+
+			&:hover {
+				cursor: pointer;
+				border: 3px solid $color_text_two;
+			}
 		}
 	}
 }
