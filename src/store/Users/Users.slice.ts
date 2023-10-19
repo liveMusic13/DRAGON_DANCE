@@ -13,7 +13,7 @@ const initialState: IStateUsers[] = [
 			fullCollection: [],
 			cardDeck: [
 				{
-					name: '',
+					name: 'init deck',
 					card: [],
 				},
 			],
@@ -179,6 +179,27 @@ export const Users = createSlice({
 		},
 		addFullCollectionCard: (state, { payload }) => {
 			state[payload.numPlayer].collectionCard.fullCollection.push(payload.card);
+		},
+		creatNewDeck: (state, { payload }) => {
+			state[payload.numPlayer].collectionCard.cardDeck.push({
+				name: payload.name,
+				card: [],
+			});
+		},
+		createCardDeck: (state, { payload }) => {
+			// state[payload.numPlayer].collectionCard.cardDeck.push({
+			// 	name: 'test',
+			// 	card: [...state[payload.numPlayer].collectionCard.cardDeck, payload.card],
+			// });
+			state[payload.numPlayer].collectionCard.cardDeck.forEach(
+				(deck, index) => {
+					if (deck.name === payload.name) {
+						state[payload.numPlayer].collectionCard.cardDeck[index].card.push(
+							payload.card,
+						);
+					}
+				},
+			);
 		},
 	},
 });

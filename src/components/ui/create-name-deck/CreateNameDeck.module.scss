@@ -1,0 +1,28 @@
+@import '../../../assets/styles/variables';
+
+.nameDeck {
+	padding: 5px;
+	font-size: 18px;
+	background-color: rgba($color: $color_text_three, $alpha: 0.2);
+	border-bottom: 1px solid $color_text_four;
+	color: $color_text_two;
+	outline: none;
+	width: 100%;
+	border-radius: 8px;
+}
+
+.createDeck {
+	background-color: $color_text_two;
+	height: 30px;
+	border-radius: 10px;
+	border: 1px solid $color_text_one;
+	box-shadow: 0px 0px 5px $color_text_three;
+	font-size: 16px;
+
+	&:hover {
+		cursor: pointer;
+		border: 2px solid $color_text_four;
+		box-shadow: 0px 0px 10px $end_of_stroke;
+		color: $color_text_four;
+	}
+}
