@@ -13,12 +13,52 @@
 	> .block__deckCard {
 		border: 3px solid $color_text_three;
 		border-radius: 20px;
-		padding: 20px;
+		padding: 10px;
 		width: 190px;
 
 		> .block__deckCard_title {
 			font-size: 30px;
 			text-align: center;
+			margin-bottom: 10px;
+		}
+
+		> .block__deckCard_deck {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			height: 93%;
+			overflow-y: scroll;
+			padding-right: 8px;
+
+			&::-webkit-scrollbar {
+				width: 8px;
+				border-radius: 10px;
+			}
+			&::-webkit-scrollbar-track {
+				background-color: $color_text_two;
+				border: 1px solid $color_text_one;
+				border-radius: 10px;
+				margin-bottom: 32px;
+			}
+			&::-webkit-scrollbar-thumb {
+				border-radius: 10px;
+				background: $color_text_three;
+			}
+
+			> .block__createADeck {
+				border: 2px dotted $color_text_two;
+				border-radius: 5px;
+				height: 45px;
+				text-align: center;
+				padding: 10px;
+				background-color: rgba(0, 0, 0, 0);
+				color: white;
+
+				&:hover {
+					cursor: pointer;
+					box-shadow: 0px 0px 15px $color_text_three;
+				}
+			}
 		}
 	}
 

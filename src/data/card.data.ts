@@ -91,7 +91,7 @@ export const cardHome: IRarityHouse = {
 			},
 			{
 				id: 41,
-				house: 'none',
+				house: 'targaryen',
 				type: 'human',
 				rarity: 'regular',
 				name: 'Визерис III Таргариен',
@@ -221,7 +221,7 @@ export const cardHome: IRarityHouse = {
 			},
 			{
 				id: 40,
-				house: 'none',
+				house: 'stark',
 				type: 'effect',
 				rarity: 'rare',
 				name: 'Винтерфелл',
@@ -735,19 +735,19 @@ export const cardNeutral: IRarity = {
 			description:
 				'Кавалерия - быстрые воины на конях, наносят мощные атаки с разгона и маневрируют на поле боя.',
 		},
-		{
-			id: 7,
-			house: 'none',
-			type: 'effect',
-			rarity: 'regular',
-			name: 'Туман (test)',
-			image: './images/image_card/neutral/regular/effect-card/tuman.webp',
-			characteristics: {
-				rangedAttack: -3,
-			},
-			description:
-				'Погружает поле битвы в густой мрак, уменьшая эффективность лучников на поле боя',
-		},
+		// {
+		// 	id: 7,
+		// 	house: 'none',
+		// 	type: 'effect',
+		// 	rarity: 'regular',
+		// 	name: 'Туман (test)',
+		// 	image: './images/image_card/neutral/regular/effect-card/tuman.webp',
+		// 	characteristics: {
+		// 		rangedAttack: -3,
+		// 	},
+		// 	description:
+		// 		'Погружает поле битвы в густой мрак, уменьшая эффективность лучников на поле боя',
+		// },
 		{
 			id: 10,
 			house: 'none',
@@ -944,7 +944,7 @@ export const cardNeutral: IRarity = {
 				health: 3,
 				move: 1,
 				influence: 5,
-				intrigue: 9,
+				intrigue: 13,
 			},
 			description:
 				'Леди Миса́рия, также известная как Горе и Бледная Пиявка — лиснийская танцовщица, любовница принца Деймона Таргариена. Была мастером над шептунами при чёрных во время Танца Драконов.',

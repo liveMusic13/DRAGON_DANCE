@@ -4,9 +4,10 @@ import {
 	ICardForOpenBooster,
 	ICharacteristicsForComponentCard,
 } from '../../../types/card.types';
+import useAddCardInDeck from '../../hooks/useAddCardInDeck';
 import styles from './Card.module.scss';
 
-const Card: FC<ICardForOpenBooster> = ({ newCard, collection }) => {
+const Card: FC<ICardForOpenBooster> = ({ newCard, collection, cardDeck }) => {
 	const strongCard = (
 		characteristics: ICharacteristicsForComponentCard,
 	): number => {
@@ -19,12 +20,21 @@ const Card: FC<ICardForOpenBooster> = ({ newCard, collection }) => {
 		return resultStrong;
 	};
 
+	const { addCardInDeck } = useAddCardInDeck();
+
 	return (
+		// <div
+		// 	className={cn({
+		// 		[styles[`wrapper-${newCard.house}`]]: !collection,
+		// 		[styles[`wrapper-${newCard.house}-collection`]]: collection,
+		// 	})}
+		// >
 		<div
 			className={cn({
 				[styles[`wrapper-${newCard.house}`]]: !collection,
 				[styles[`wrapper-${newCard.house}-collection`]]: collection,
 			})}
+			onClick={() => addCardInDeck(newCard, cardDeck)}
 		>
 			<h2>{newCard.name}</h2>
 			<img
