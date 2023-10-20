@@ -804,7 +804,7 @@ export const cardNeutral: IRarity = {
 			type: 'human',
 			rarity: 'regular',
 			name: 'Шая',
-			image: './images/image_card/neutral/regular/human/Janos_slynt.jpg',
+			image: './images/image_card/neutral/regular/human/Shae.jpg',
 			characteristics: {
 				attack: 2,
 				health: 5,

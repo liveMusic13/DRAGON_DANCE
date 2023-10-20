@@ -187,19 +187,84 @@ export const Users = createSlice({
 			});
 		},
 		createCardDeck: (state, { payload }) => {
-			// state[payload.numPlayer].collectionCard.cardDeck.push({
-			// 	name: 'test',
-			// 	card: [...state[payload.numPlayer].collectionCard.cardDeck, payload.card],
-			// });
-			state[payload.numPlayer].collectionCard.cardDeck.forEach(
-				(deck, index) => {
-					if (deck.name === payload.name) {
-						state[payload.numPlayer].collectionCard.cardDeck[index].card.push(
-							payload.card,
-						);
+			const { numPlayer, name, card } = payload;
+
+			// Находим колоду для заданного игрока
+			const cardDeck = state[numPlayer].collectionCard.cardDeck;
+
+			// Находим индекс существующей колоды, где имя совпадает
+			const deckIndex = cardDeck.findIndex(deck => deck.name === name);
+
+			// Проверяем, есть ли колода с таким именем
+			if (deckIndex !== -1) {
+				const existingDeck = cardDeck[deckIndex];
+
+				// Подсчитываем, сколько карт с таким же id и редкостью уже есть в колоде
+				const existingCardsCount = existingDeck.card.filter(
+					existingCard =>
+						existingCard.id === card.id && existingCard.rarity === card.rarity,
+				).length;
+
+				// Определяем максимальное количество карт в зависимости от редкости
+				let maxCount;
+				if (card.rarity === 'regular' || card.rarity === 'rare') {
+					maxCount = 3;
+				} else if (card.rarity === 'epic') {
+					maxCount = 2;
+				} else {
+					// 'legendary'
+					maxCount = 1;
+				}
+				// Если количество таких карт не превышает максимального значения и не превышает размер колоды, мы добавляем новую карту
+				cardDeck.forEach((deck, index) => {
+					if (deck.name === payload.name && deck.card.length <= 29) {
+						if (existingCardsCount < maxCount) {
+							state[numPlayer].collectionCard.cardDeck[deckIndex].card.push(
+								card,
+							);
+						}
 					}
-				},
-			);
+				});
+			}
+		},
+		deleteCardDeck: (state, { payload }) => {
+			const { numPlayer, nameDeck, id } = payload;
+
+			// Находим колоду для заданного игрока
+			const player = state[numPlayer];
+			const cardDecks = player.collectionCard.cardDeck;
+
+			// Находим индекс существующей колоды, где имя совпадает
+			const deckIndex = cardDecks.findIndex(deck => deck.name === nameDeck);
+
+			if (deckIndex !== -1) {
+				const deck = cardDecks[deckIndex];
+
+				// Фильтруем карты в колоде, исключая карту с заданным id
+				const updatedCards = deck.card.filter(card => card.id !== id);
+
+				// Создаем новую копию колоды с обновленным списком карт
+				const updatedDeck = { ...deck, card: updatedCards };
+
+				// Создаем новый массив копий колод с обновленной колодой
+				const updatedDecks = [...cardDecks];
+				updatedDecks[deckIndex] = updatedDeck;
+
+				// Возвращаем обновленное состояние
+				return {
+					...state,
+					[numPlayer]: {
+						...player,
+						collectionCard: {
+							...player.collectionCard,
+							cardDeck: updatedDecks,
+						},
+					},
+				};
+			}
+
+			// Если колода не найдена, возвращаем исходное состояние
+			return state;
 		},
 	},
 });
