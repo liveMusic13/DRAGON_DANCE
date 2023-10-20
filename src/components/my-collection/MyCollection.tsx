@@ -52,6 +52,7 @@ const MyCollection: FC<IViewCollection> = ({ setVieCollection }) => {
 									console.log(cardDeck);
 									setIsViewMakeCardDeck(!isViewMakeCardDeck);
 								}}
+								className={styles.nameYourDeck}
 							>
 								{deck.name}
 							</p>
