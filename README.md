@@ -1,27 +1,22 @@
-# React + TypeScript + Vite
+# Dragon dance
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## General points:
 
-Currently, two official plugins are available:
+- a card collection game based on the world of "Dance of Dragons" from George Martin;
+- local multiplayer mode, allowing several players to play on one computer;
+- players choose a house at the beginning of the game, gaining access to unique cards;
+- collect a deck of 30 cards, including troops, characters, effects;
+- gold can be obtained by winning battles and raids.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Card characteristics:
 
-## Expanding the ESLint configuration
+- the main parameter of the card is strength, which is the sum of the character’s various characteristics;
+- cards will have a variety of characteristics, including strength, influence, lives and others.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## The game implements the following functionality:
+- multiplayer on one computer for up to 3 people (since maps for other houses have not yet been made);
+- buying a booster in a store;
+- opening a booster and receiving cards (the chance of receiving depends on the rarity);
+- creating and editing a deck;
+- player with music;
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
