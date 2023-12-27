@@ -1,6 +1,7 @@
 import React, { Dispatch, FC, SetStateAction } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { actions } from '../../store/users/Users.slice';
+import { RootStateCountPlayers } from '../../types/rootStateUsers.types';
 import Button from '../ui/button/Button';
 import styles from './Shop.module.scss';
 
@@ -10,7 +11,7 @@ interface IViewShop {
 
 const Shop: FC<IViewShop> = ({ setViewShop }) => {
 	const dispatch = useDispatch();
-	const { countPlayers } = useSelector(state => state);
+	const { countPlayers } = useSelector((state: RootStateCountPlayers) => state);
 
 	return (
 		<div className={styles.wrapper}>

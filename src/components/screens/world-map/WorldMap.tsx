@@ -3,6 +3,8 @@ import React, { FC, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { actions } from '../../../store/count-players/CountPlayers.slice';
+import { RootStateUsers } from '../../../types/rootStateUsers.types';
+import { IStateUsers } from '../../../types/state.users';
 import Layout from '../../layout/Layout';
 import MyCollection from '../../my-collection/MyCollection';
 import Shop from '../../shop/Shop';
@@ -17,7 +19,7 @@ const WorldMap: FC = () => {
 	const [viewCollection, setVieCollection] = useState<boolean>(false);
 	const [viewOpenBooster, setOpenBooster] = useState<boolean>(false);
 
-	const { users } = useSelector(state => state);
+	const { users } = useSelector((state: RootStateUsers) => state);
 
 	const [countPlayer, setCountPlayer] = useState<number>(0);
 	const dispatch = useDispatch();
@@ -121,7 +123,7 @@ const WorldMap: FC = () => {
 							</>
 						)}
 					</div>
-					{users.map(icon => {
+					{users.map((icon: IStateUsers) => {
 						return (
 							<IconOnTheMap
 								key={Math.random()}

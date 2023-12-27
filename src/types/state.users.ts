@@ -1,8 +1,6 @@
-interface ICard {
-	test: string; //все карты игрока
-}
+import { ICard } from './card.types';
 
-interface ICardDeck {
+export interface ICardDeck {
 	name: string;
 	card: ICard[]; // карты колоды
 }

@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './ChoiseHouse.module.scss';
-import house from './house.data';
+import house, { IHouse } from './house.data';
 
 const ChoiseHouse: FC = () => {
 	const navigate = useNavigate();
@@ -9,7 +9,7 @@ const ChoiseHouse: FC = () => {
 
 	return (
 		<div className={styles.wrapper}>
-			{house.map(elem => {
+			{house.map((elem: IHouse) => {
 				return (
 					<div
 						key={elem.id}

@@ -1,6 +1,12 @@
 import React, { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { actions } from '../../../store/users/Users.slice';
+import { ICard } from '../../../types/card.types';
+import {
+	RootStateCountPlayers,
+	RootStateUsers,
+} from '../../../types/rootStateUsers.types';
+import { ICardDeck } from '../../../types/state.users';
 import styles from './MakeCardDeck.module.scss';
 
 interface IMakeCardDeck {
@@ -8,8 +14,8 @@ interface IMakeCardDeck {
 }
 
 const MakeCardDeck: FC<IMakeCardDeck> = ({ cardDeck }) => {
-	const { users } = useSelector(state => state);
-	const { countPlayers } = useSelector(state => state);
+	const { users } = useSelector((state: RootStateUsers) => state);
+	const { countPlayers } = useSelector((state: RootStateCountPlayers) => state);
 
 	const dispatch = useDispatch();
 
@@ -19,9 +25,9 @@ const MakeCardDeck: FC<IMakeCardDeck> = ({ cardDeck }) => {
 				<h2 className={styles.nameDeck}>{cardDeck}</h2>
 				<div className={styles.block__cardName}>
 					{users[countPlayers.count].collectionCard.cardDeck
-						.filter(deck => deck.name === cardDeck)
-						.map(deck => {
-							return deck.card.map(card => {
+						.filter((deck: ICardDeck) => deck.name === cardDeck)
+						.map((deck: ICardDeck) => {
+							return deck.card.map((card: ICard) => {
 								return (
 									<p
 										key={Math.random()}
@@ -43,8 +49,8 @@ const MakeCardDeck: FC<IMakeCardDeck> = ({ cardDeck }) => {
 				</div>
 
 				{users[countPlayers.count].collectionCard.cardDeck
-					.filter(deck => deck.name === cardDeck)
-					.map(deck => {
+					.filter((deck: ICardDeck) => deck.name === cardDeck)
+					.map((deck: ICardDeck) => {
 						return <p className={styles.countCrad}>{deck.card.length} / 30</p>;
 					})}
 			</div>

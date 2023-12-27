@@ -13,8 +13,13 @@ const Card: FC<ICardForOpenBooster> = ({ newCard, collection, cardDeck }) => {
 	): number => {
 		let resultStrong = 0;
 
-		for (let value in characteristics) {
-			resultStrong += characteristics[value];
+		for (let key in characteristics) {
+			if (Object.prototype.hasOwnProperty.call(characteristics, key)) {
+				const value = characteristics[key];
+				if (typeof value === 'number') {
+					resultStrong += value;
+				}
+			}
 		}
 
 		return resultStrong;

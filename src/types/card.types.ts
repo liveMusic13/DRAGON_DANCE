@@ -1,4 +1,5 @@
 export interface ICharacteristicsForComponentCard {
+	[key: string]: number | undefined;
 	attack?: number;
 	rangedAttack?: number;
 	attackAgainstCavalry?: number;
@@ -105,4 +106,13 @@ export interface IRarityHouse {
 		martel: ICard[];
 		hightower: ICard[];
 	};
+}
+
+export interface IGetRandomNewCard {
+	[key: string]: ICard | undefined;
+	cardOne: ICard;
+	cardTwo: ICard;
+	cardThree: ICard;
+	cardFour: ICard;
+	cardFive: ICard;
 }

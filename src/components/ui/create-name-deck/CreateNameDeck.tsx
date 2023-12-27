@@ -1,6 +1,7 @@
 import React, { Dispatch, FC, SetStateAction, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { actions } from '../../../store/users/Users.slice';
+import { RootStateCountPlayers } from '../../../types/rootStateUsers.types';
 import styles from './CreateNameDeck.module.scss';
 
 interface ICreateNameDeck {
@@ -9,8 +10,8 @@ interface ICreateNameDeck {
 
 const CreateNameDeck: FC<ICreateNameDeck> = ({ setIsViewCreateNameDeck }) => {
 	const dispatch = useDispatch();
-	const { countPlayers } = useSelector(state => state);
-	const { users } = useSelector(state => state);
+	const { countPlayers } = useSelector((state: RootStateCountPlayers) => state);
+	// const { users } = useSelector(state => state);
 
 	const [nameDeck, setNameDeck] = useState<string>('');
 

@@ -1,6 +1,11 @@
 import React, { Dispatch, FC, SetStateAction, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { actions } from '../../../store/users/Users.slice';
+import { ICard, IGetRandomNewCard } from '../../../types/card.types';
+import {
+	RootStateCountPlayers,
+	RootStateUsers,
+} from '../../../types/rootStateUsers.types';
 import useGetCardInBooster from '../../hooks/useGetCardInBooster';
 import useGetNewCard from '../../hooks/useGetNewCard';
 import Button from '../button/Button';
@@ -12,8 +17,8 @@ interface IViewOpenBooster {
 }
 
 const OpenBooster: FC<IViewOpenBooster> = ({ setOpenBooster }) => {
-	const { users } = useSelector(state => state);
-	const { countPlayers } = useSelector(state => state);
+	const { users } = useSelector((state: RootStateUsers) => state);
+	const { countPlayers } = useSelector((state: RootStateCountPlayers) => state);
 
 	const dispatch = useDispatch();
 
@@ -22,21 +27,27 @@ const OpenBooster: FC<IViewOpenBooster> = ({ setOpenBooster }) => {
 	const { getRandomCard } = useGetCardInBooster();
 	const { getNewCard } = useGetNewCard();
 
-	const arrayNewCard = [];
+	const arrayNewCard: ICard[] = [];
 
 	const funckAddInArray = () => {
-		let newCard = {
-			cardOne: getNewCard(getRandomCard()),
-			cardTwo: getNewCard(getRandomCard()),
-			cardThree: getNewCard(getRandomCard()),
-			cardFour: getNewCard(getRandomCard()),
-			cardFive: getNewCard(getRandomCard()),
+		let newCard: IGetRandomNewCard = {
+			cardOne: getNewCard(getRandomCard())!,
+			cardTwo: getNewCard(getRandomCard())!,
+			cardThree: getNewCard(getRandomCard())!,
+			cardFour: getNewCard(getRandomCard())!,
+			cardFive: getNewCard(getRandomCard())!,
 		};
 
-		for (let card in newCard) {
-			arrayNewCard.push(newCard[card]);
+		for (let cardKey in newCard) {
+			if (Object.prototype.hasOwnProperty.call(newCard, cardKey)) {
+				const card = newCard[cardKey];
+				if (card) {
+					arrayNewCard.push(card);
+				}
+			}
 		}
 	};
+
 	funckAddInArray();
 
 	return (
@@ -46,7 +57,7 @@ const OpenBooster: FC<IViewOpenBooster> = ({ setOpenBooster }) => {
 					<div
 						className={styles.block__getCard}
 						onClick={() => {
-							arrayNewCard.forEach(card => {
+							arrayNewCard.forEach((card: ICard) => {
 								dispatch(
 									actions.addFullCollectionCard({
 										numPlayer: countPlayers.count,
@@ -57,7 +68,7 @@ const OpenBooster: FC<IViewOpenBooster> = ({ setOpenBooster }) => {
 							setViewCardInBooster(false);
 						}}
 					>
-						{arrayNewCard.map(card => {
+						{arrayNewCard.map((card: ICard) => {
 							return (
 								<Card key={Math.random() + Math.random()} newCard={card} />
 							);

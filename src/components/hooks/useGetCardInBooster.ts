@@ -1,8 +1,9 @@
 import { useSelector } from 'react-redux';
 import { cardHome, cardNeutral } from '../../data/card.data';
+import { RootStateCountPlayers } from '../../types/rootStateUsers.types';
 
 const useGetCardInBooster = () => {
-	const { countPlayers } = useSelector(state => state);
+	const { countPlayers } = useSelector((state: RootStateCountPlayers) => state);
 
 	const house =
 		countPlayers.count === 0
@@ -58,7 +59,7 @@ const useGetCardInBooster = () => {
 
 		if (Math.random() < 0.2) {
 			if (randomValueCategory < 0.7) {
-				return cardHome[rarity][house][
+				return cardHome[rarity][house][ //FIXME: ТИПИЗИРОВАТЬ ДО КОНЦА ЭТОТ И 2 СЛЕДУЮЩИХ ХУКА
 					Math.floor(Math.random() * cardHome[rarity][house].length)
 				];
 			} else if (randomValueCategory < 0.9) {

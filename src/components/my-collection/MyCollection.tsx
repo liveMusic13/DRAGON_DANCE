@@ -1,5 +1,11 @@
 import React, { Dispatch, FC, SetStateAction, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { ICard } from '../../types/card.types';
+import {
+	RootStateCountPlayers,
+	RootStateUsers,
+} from '../../types/rootStateUsers.types';
+import { ICardDeck } from '../../types/state.users';
 import Button from '../ui/button/Button';
 import Card from '../ui/card/Card';
 import CreateNameDeck from '../ui/create-name-deck/CreateNameDeck';
@@ -11,26 +17,26 @@ interface IViewCollection {
 }
 
 const MyCollection: FC<IViewCollection> = ({ setVieCollection }) => {
-	const { users } = useSelector(state => state);
-	const { countPlayers } = useSelector(state => state);
+	const { users } = useSelector((state: RootStateUsers) => state);
+	const { countPlayers } = useSelector((state: RootStateCountPlayers) => state);
 	const [isViewCreateNameDeck, setIsViewCreateNameDeck] =
 		useState<boolean>(false);
 	const [isViewMakeCardDeck, setIsViewMakeCardDeck] = useState<boolean>(false);
 
-	const [cardDeck, setCardDeck] = useState('');
+	const [cardDeck, setCardDeck] = useState<string>('');
 
-	const [indexCard, setIndexCard] = useState(0);
+	const [indexCard, setIndexCard] = useState<number>(0);
 
 	const nextPageCard = () => {
 		if (
 			indexCard <=
 			users[countPlayers.count].collectionCard.fullCollection.length - 6 //HELP: Ставлю -6 т.к. по 5 карт прибавляю при отображении и если я поставлю просто длинну, то она будет равна 15 и при проверке, когда индекс будет равен 10, оно проверит что все норм 15 меньше 10, и перегартнет дальше, на пустую страницу. А так будет длинна допустим 15 минус 6 это 9, и проверка не пройдет, значит функция перегартывания не пройдет
 		)
-			setIndexCard(prev => prev + 5);
+			setIndexCard((prev: number) => prev + 5);
 	};
 
 	const prevPageCard = () => {
-		if (indexCard > 0) setIndexCard(prev => prev - 5);
+		if (indexCard > 0) setIndexCard((prev: number) => prev - 5);
 	};
 
 	return (
@@ -44,20 +50,22 @@ const MyCollection: FC<IViewCollection> = ({ setVieCollection }) => {
 					>
 						&#43;
 					</button>
-					{users[countPlayers.count].collectionCard.cardDeck.map(deck => {
-						return (
-							<p
-								onClick={() => {
-									setCardDeck(deck.name);
-									console.log(cardDeck);
-									setIsViewMakeCardDeck(!isViewMakeCardDeck);
-								}}
-								className={styles.nameYourDeck}
-							>
-								{deck.name}
-							</p>
-						);
-					})}
+					{users[countPlayers.count].collectionCard.cardDeck.map(
+						(deck: ICardDeck) => {
+							return (
+								<p
+									onClick={() => {
+										setCardDeck(deck.name);
+										console.log(cardDeck);
+										setIsViewMakeCardDeck(!isViewMakeCardDeck);
+									}}
+									className={styles.nameYourDeck}
+								>
+									{deck.name}
+								</p>
+							);
+						},
+					)}
 					{isViewMakeCardDeck && <MakeCardDeck cardDeck={cardDeck} />}
 					{isViewCreateNameDeck && (
 						<CreateNameDeck setIsViewCreateNameDeck={setIsViewCreateNameDeck} />
@@ -69,7 +77,7 @@ const MyCollection: FC<IViewCollection> = ({ setVieCollection }) => {
 				<div className={styles.block__card__fullCollection}>
 					{users[countPlayers.count].collectionCard.fullCollection
 						.slice(indexCard, indexCard + 5)
-						.map(card => {
+						.map((card: ICard) => {
 							return (
 								<Card
 									key={Math.random()}

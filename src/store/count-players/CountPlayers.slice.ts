@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { ICountPlayer } from '../../types/stateCountPlayers.types';
 
-const initialState = {
+const initialState: ICountPlayer = {
 	count: 0,
 };
 

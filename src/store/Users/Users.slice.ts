@@ -206,7 +206,7 @@ export const Users = createSlice({
 				).length;
 
 				// Определяем максимальное количество карт в зависимости от редкости
-				let maxCount;
+				let maxCount: number;
 				if (card.rarity === 'regular' || card.rarity === 'rare') {
 					maxCount = 3;
 				} else if (card.rarity === 'epic') {
