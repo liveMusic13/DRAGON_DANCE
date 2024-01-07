@@ -18,5 +18,5 @@
 - buying a booster in a store;
 - opening a booster and receiving cards (the chance of receiving depends on the rarity);
 - creating and editing a deck;
-- player with music;
+- player with music.
 
